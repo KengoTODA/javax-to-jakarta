@@ -1,0 +1,13 @@
+apply plugin: 'java'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+tasks.withType(Javadoc) {
+    options.encoding = 'UTF-8'
+}
+
+test { useJUnitPlatform() }
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
