@@ -1,0 +1,22 @@
+apply from: "$rootDir/gradle/java.gradle"
+apply from: "$rootDir/gradle/jacoco.gradle"
+apply from: "$rootDir/gradle/spotless.gradle"
+apply from: "$rootDir/gradle/errorprone.gradle"
+apply from: "$rootDir/gradle/publish.gradle"
+
+dependencies {
+    compile project(':core')
+    errorprone "com.google.errorprone:error_prone_core:${errorproneVersion}"
+}
+
+jar {
+    manifest {
+        attributes (
+                'Premain-Class': 'jp.skypencil.jakarta.Agent'
+                )
+    }
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
