@@ -5,7 +5,7 @@ javax-to-jakarta
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
-This is a POC project to confirm that `javax.` package can be replaced with `jakarta.` package automatically to [support this change](https://eclipse-foundation.blog/2019/05/03/jakarta-ee-java-trademarks/). This project provides several tols that supports to run old programs on new Jakarta EE that has no `javax.` package:
+This is a POC project to confirm that `javax.` package can be replaced with `jakarta.` package automatically to [support this change](https://eclipse-foundation.blog/2019/05/03/jakarta-ee-java-trademarks/). This project provides several tools that supports running old programs on new Jakarta EE that has no module with `javax.` package:
 
 * [JVM agent](https://docs.oracle.com/en/java/javase/11/docs/api/java.instrument/java/lang/instrument/package-summary.html) (in progress)
 * Gradle plugin (not started)
