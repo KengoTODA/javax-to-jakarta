@@ -10,7 +10,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import org.junit.jupiter.api.Test;
 
-public class ClassFileConverterTest {
+public class ClassDataConverterTest {
   @Test
   public void test()
       throws IllegalClassFormatException, IOException, NoSuchMethodException, SecurityException,
@@ -27,9 +27,7 @@ public class ClassFileConverterTest {
                 "skypencil",
                 "jakarta",
                 "CallingJavax.class"));
-    byte[] converted =
-        new ClassFileConverter()
-            .transform(classLoader, "jp/skypencil/jakarta/CallingJavax", null, null, classData);
+    byte[] converted = new ClassDataConverter().apply(classData);
     Class<?> clazz = classLoader.defineClass("jp.skypencil.jakarta.CallingJavax", converted);
     Method method = clazz.getMethod("method");
     method.setAccessible(true);
