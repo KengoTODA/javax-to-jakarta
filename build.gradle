@@ -12,7 +12,7 @@ subprojects {
 }
 
 ext {
-    junitVersion = '5.6.0'
+    junitVersion = '5.6.1'
     errorproneVersion = '2.3.4'
 }
 
