@@ -13,7 +13,7 @@ subprojects {
 
 ext {
     junitVersion = '5.7.2'
-    errorproneVersion = '2.7.1'
+    errorproneVersion = '2.8.0'
 }
 
 defaultTasks 'spotlessApply', 'build'
